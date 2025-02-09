@@ -7,10 +7,12 @@ def generate_java_class():
     attributes = []
     while True:
         attr = input("Atributo (o 'fin' para terminar): ").strip()
+        # Validar si el usuario escribe 'fin'
         if attr.lower() == 'fin':
             break
+        # Validar el formato 'tipo nombre'
         if len(attr.split()) == 2:
-            attributes.append(attr)
+            attributes.append(attr.strip())
         else:
             print("Formato incorrecto. Usa 'tipo nombre'.")
 
@@ -41,8 +43,8 @@ def generate_java_class():
     # Generar toString
     class_content.append("    @Override\n")
     class_content.append("    public String toString() {\n")
-    to_string_content = [f"\"{attr.split()[1]}=\" + {attr.split()[1]}" for attr in attributes]
-    class_content.append(f"        return \"{class_name} [\" + {" + ", ".join(to_string_content)} + "]\";\n")
+    to_string_content = [f'"{attr.split()[1]}=" + {attr.split()[1]}' for attr in attributes]
+    class_content.append(f"        return \"{class_name} [\" + " + " + \", \" + ".join(to_string_content) + " + \"]\";\n")
     class_content.append("    }\n")
 
     class_content.append("}\n")
