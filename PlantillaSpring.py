@@ -1,6 +1,7 @@
 def generate_java_class():
     # Solicitar el nombre de la clase
     class_name = input("Ingresa el nombre de la clase: ").strip()
+    class_name = class_name[:1].upper() + class_name[1:]  # Asegurar que comience con mayúscula
 
     # Solicitar los atributos y tipos de datos
     print("Ingresa los atributos de la clase en el formato 'tipo nombre'. Escribe 'fin' para terminar.")
@@ -52,12 +53,32 @@ def generate_java_class():
     # Unir todo el contenido
     class_code = "".join(class_content)
 
-    # Crear archivo .java
+    # Crear archivo .java para la clase
     file_name = f"{class_name}.java"
     with open(file_name, "w") as java_file:
         java_file.write(class_code)
 
     print(f"Clase {class_name} generada exitosamente en el archivo {file_name}.")
+
+    # Llamar a la función para generar el DAO
+    generate_DAO_Interface(class_name)
+
+def generate_DAO_Interface(class_name):
+    # Generar el contenido de la interfaz DAO
+    dao_content = [
+        "import java.util.List;\n",
+        "import java.util.Optional;\n\n",
+        "import org.springframework.data.jpa.repository.JpaRepository;\n\n",
+        f"public interface {class_name}DAO extends JpaRepository<{class_name}, Integer> {{\n",
+        "}\n"
+    ]
+
+    # Crear archivo .java para la interfaz DAO
+    dao_file_name = f"{class_name}DAO.java"
+    with open(dao_file_name, "w") as dao_file:
+        dao_file.writelines(dao_content)
+
+    print(f"Interfaz DAO {class_name}DAO generada exitosamente en el archivo {dao_file_name}.")
 
 # Ejecutar la función
 generate_java_class()
