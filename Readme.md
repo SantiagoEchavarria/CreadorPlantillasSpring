@@ -3,13 +3,10 @@
 ## Índice 📑
 - [Descripción](#descripción)
 - [Características](#características)
-- [Requisitos Previos](#requisitos-previos)
 - [Instalación](#instalación)
 - [Uso](#uso)
 - [Estructura de Archivos Generados](#estructura-de-archivos-generados)
-- [Características Técnicas](#características-técnicas)
-- [Contribuir](#contribuir)
-- [Licencia](#licencia)
+
 
 ## Descripción 📖
 Este proyecto proporciona una herramienta para generar automáticamente clases Java junto con sus respectivas interfaces y clases de servicio siguiendo un patrón de diseño DAO (Data Access Object) y la estructura de Spring Boot.
@@ -27,11 +24,6 @@ El generador crea automáticamente cuatro archivos Java diferentes para cada ent
 * Manejo de estados (habilitado/inhabilitado)
 * Validación de entrada de datos
 * Manejo de errores robusto
-
-## Requisitos Previos 📋
-* Java JDK 8 o superior
-* Spring Boot en tu proyecto (para usar las clases generadas)
-* Jakarta Persistence API
 
 ## Instalación 💻
 1. Clona este repositorio:
