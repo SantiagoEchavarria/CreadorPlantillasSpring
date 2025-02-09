@@ -109,29 +109,4 @@ public class UsuarioServicio implements UsuarioInterface {
 }
 ```
 
-## Características Técnicas 🔧
-* Uso de StringBuilder para generación eficiente de código
-* Manejo de excepciones para operaciones de archivo
-* Validación de entrada de datos
-* Generación de código con formato consistente
-* Integración con Spring Boot y JPA
-* Soporte para transacciones
 
-## Contribuir 🤝
-Las contribuciones son bienvenidas. Por favor, sigue estos pasos:
-
-1. Fork el proyecto
-2. Crea una nueva rama
-   ```bash
-   git checkout -b feature/AmazingFeature
-   ```
-3. Realiza tus cambios
-4. Commit tus cambios
-   ```bash
-   git commit -m 'Add some AmazingFeature'
-   ```
-5. Push a la rama
-   ```bash
-   git push origin feature/AmazingFeature
-   ```
-6. Abre un Pull Request
